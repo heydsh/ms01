@@ -1,0 +1,1213 @@
+@import 'scss/mixins/_mixins.scss';
+@import 'scss/mixins/_breakpoints.scss';
+@import 'scss/helpers/_variables-bootstrap.scss';
+@import 'scss/base/_colors.scss';
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&family=Roboto:wght@100&display=swap');
+
+@font-face {
+	font-family: 'eldwinscript_bold';
+	src: url('../fonts/eldwin-scriptbold-webfont.woff2') format('woff2'), url('../fonts/eldwin-scriptbold-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'olde_englishregular';
+	src: url('../fonts/oldeenglish-webfont.woff2') format('woff2'), url('../fonts/oldeenglish-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-family: 'Nunito', sans-serif;
+	font-size: 16px;
+	font-size: 1rem;
+	font-weight: 400;
+	color: black;
+}
+
+.hero {
+	background-image: url(../images/headerbg.webp);
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+	position: relative;
+	width: 100%;
+	// height: 60vh;
+	// min-height: 1080px;
+	height: 1080px;
+	color: #fff;
+	overflow: hidden;
+
+	@include media-breakpoint-down(md) {
+		// height: 75vh;
+		height: 900px;
+	}
+
+	@include media-breakpoint-down(xs) {
+		background-image: url(../images/headerbg_mobile.webp);
+		// height: 75vh;
+		height: 649px;
+	}
+}
+
+.container {
+	@include media-breakpoint-up(xxl) {
+		max-width: 1408px;
+	}
+}
+
+section {
+	padding-bottom: 50px;
+	@include media-breakpoint-down(sm) {
+		padding-bottom: 60px;
+	}
+}
+
+.cuentos {
+	section:nth-child(2n) {
+		// background-color: yellow;
+
+		@include media-breakpoint-up(md) {
+			.row {
+				flex-direction: row-reverse;
+			}
+
+			.block-text {
+				padding-left: 50px;
+
+				@include media-breakpoint-down(xl) {
+					padding-left: 20px;
+				}
+			}
+		}
+	}
+}
+
+// .david .row,
+// .ferri .row,
+// .sol .row {
+// 	@include media-breakpoint-down(md) {
+// 		flex-direction: column-reverse;
+// 	}
+// }
+
+.hero_content {
+	$self: &;
+
+	position: relative;
+	z-index: 99;
+
+	.logo {
+		position: absolute;
+		top: 90px;
+		left: 0;
+		right: 0;
+		text-align: center;
+		@include media-breakpoint-down(sm) {
+			top: 100px;
+			width: 264px;
+			margin: auto;
+		}
+	}
+
+	.social {
+		position: absolute;
+		top: 15px;
+		right: 30px;
+		@include media-breakpoint-down(md) {
+			left: 0px;
+			right: 0px;
+			text-align: center;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		li {
+			display: inline;
+			margin-left: 0.625rem;
+		}
+	}
+}
+
+.intro {
+	position: relative;
+	text-align: center;
+	padding-top: 115px;
+	padding-bottom: 65px;
+
+	// background-image: url(/images/bg_intro.png);
+	// background-repeat: no-repeat;
+	// background-position: center center;
+
+	@include media-breakpoint-down(lg) {
+		padding-top: 70px;
+	}
+	@include media-breakpoint-down(sm) {
+		// background-image: url(/images/bg_intro_mobile.png);
+		// background-position: center 70px;
+		// background-repeat: no-repeat;
+		padding-top: 50px;
+		padding-bottom: 35px;
+	}
+
+	.intro_libro {
+		position: absolute;
+		left: 50%;
+		top: 146px;
+		transform: translate(-50%, -50%);
+		margin-left: -643px;
+		// left: calc(50% + 200px);
+		@include media-breakpoint-down(xl) {
+			margin-left: 0px;
+			left: 90px;
+		}
+		@include media-breakpoint-down(lg) {
+			width: 109px;
+			top: 51px;
+			left: 66px;
+		}
+		@include media-breakpoint-down(md) {
+			width: 100px;
+			top: 50px;
+			left: 69px;
+		}
+		@include media-breakpoint-down(sm) {
+			width: 65px;
+			top: 95px;
+			left: 50%;
+			margin-left: -175px;
+		}
+		@include media-breakpoint-down(xs) {
+			margin-left: -147px;
+		}
+	}
+
+	.intro_flores {
+		position: absolute;
+		right: 50%;
+		top: 227px;
+		transform: translate(-50%, -50%);
+		margin-right: -787px;
+		@include media-breakpoint-down(xl) {
+			margin-right: 0px;
+			right: -55px;
+		}
+		@include media-breakpoint-down(lg) {
+			width: 109px;
+			top: 324px;
+			right: -43px;
+		}
+		@include media-breakpoint-down(md) {
+			width: 100px;
+			top: 217px;
+			right: -40px;
+		}
+		@include media-breakpoint-down(sm) {
+			width: 65px;
+			top: 160px;
+			right: 50%;
+			margin-right: -234px;
+		}
+		@include media-breakpoint-down(xs) {
+			margin-right: -215px;
+		}
+	}
+
+	h1 {
+		@include font-size(70);
+		@include line-height(76);
+		color: $color-primary;
+		font-weight: 700;
+		margin-bottom: 35px;
+		@include media-breakpoint-down(sm) {
+			margin-bottom: 50px;
+			padding: 0px 30px;
+			@include font-size(43);
+			@include line-height(44);
+
+			span {
+				@include media-breakpoint-down(sm) {
+					display: block;
+				}
+			}
+		}
+	}
+
+	p {
+		@include font-size(30);
+		@include line-height(41);
+		color: $color-grey;
+		font-weight: 700;
+		max-width: 898px;
+		margin: auto;
+		@include media-breakpoint-down(sm) {
+			@include font-size(20);
+			@include line-height(26);
+			padding: 0px 35px;
+			font-weight: 400;
+		}
+	}
+}
+
+.block-image {
+	height: 576px;
+	max-width: 674px;
+	@include media-breakpoint-down(md) {
+		margin-bottom: 16px;
+		max-width: 100%;
+		// height: 318px;
+		// max-width: 354px;
+	}
+	@include media-breakpoint-down(sm) {
+		margin-bottom: 16px;
+		height: 318px;
+		// max-width: 354px;
+	}
+
+	img {
+		@include media-breakpoint-down(sm) {
+			max-width: 290px;
+			max-height: 280px;
+		}
+	}
+}
+
+.block-image-orange {
+	@include blockimage($color-orange-light);
+}
+
+.block-image-red {
+	@include blockimage($color-red-light);
+}
+
+.block-image-blue {
+	@include blockimage($color-blue-light);
+}
+
+.block-image-purple {
+	@include blockimage($color-purple-light);
+}
+
+.block-image-bluegreen {
+	@include blockimage($color-bluegreen-light);
+}
+
+.block-image-green {
+	@include blockimage($color-green-light);
+}
+
+.block-text {
+	// max-width: 600px;
+	position: relative;
+	padding-left: 40px;
+
+	@include media-breakpoint-down(md) {
+		padding: 0 18px !important;
+	}
+
+	span {
+		display: block;
+	}
+
+	// &-right {
+	// 	padding-left: 40px;
+	// 	@include media-breakpoint-down(sm) {
+	// 		padding-left: 0px;
+	// 	}
+	// }
+
+	// &-left {
+	// 	padding-left: 40px;
+	// 	@include media-breakpoint-down(sm) {
+	// 		padding-left: 0px;
+	// 	}
+	// }
+
+	// &-left {
+	// 	padding-left: 20px;
+	// 	@include media-breakpoint-down(sm) {
+	// 		padding-left: 0px;
+	// 	}
+	// }
+
+	h3 {
+		@include font-size(60);
+		@include line-height(61);
+		font-family: 'eldwinscript_bold';
+		margin-bottom: 20px;
+		@include media-breakpoint-down(sm) {
+			@include font-size(43);
+			@include line-height(49);
+		}
+	}
+
+	p {
+		@include font-size(26);
+		@include line-height(35);
+		margin-bottom: 50px;
+		font-weight: 300;
+		max-width: 582px;
+		padding-right: 10px;
+		@include media-breakpoint-down(xl) {
+			padding-right: 30px;
+		}
+		@include media-breakpoint-down(md) {
+			padding-right: 0px;
+			max-width: 100%;
+		}
+		@include media-breakpoint-down(sm) {
+			@include font-size(20);
+			@include line-height(26);
+			margin-bottom: 30px;
+		}
+	}
+
+	.nav {
+		// max-width: 600px;
+		// padding-bottom: 1rem;
+		margin-bottom: 1rem;
+
+		@include media-breakpoint-down(md) {
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			padding-bottom: 0rem;
+			margin-bottom: 0rem;
+		}
+
+		li {
+			margin-right: 15px;
+			margin-bottom: 15px;
+			align-items: stretch;
+			@include media-breakpoint-down(sm) {
+				margin: 4px 0px;
+			}
+		}
+
+		// li:last-child {
+		// 	margin-bottom: 0px !important;
+		// }
+	}
+
+	.flor_roja {
+		position: absolute;
+		top: -40px;
+		right: 98px;
+		@include media-breakpoint-down(lg) {
+			top: -32px;
+			right: 10px;
+		}
+		@include media-breakpoint-down(md) {
+			top: 11px;
+			right: 10px;
+			width: 50px;
+		}
+	}
+
+	.flor_roja_leo {
+		position: absolute;
+		top: -40px;
+		right: 98px;
+		@include media-breakpoint-down(md) {
+			top: 339px;
+			left: 10px;
+			width: 50px;
+		}
+	}
+
+	.flor_lila {
+		position: absolute;
+		top: -50px;
+		right: 30px;
+		@include media-breakpoint-down(lg) {
+			top: -74px;
+			right: -35px;
+			width: 100px;
+		}
+		@include media-breakpoint-down(md) {
+			top: 0px;
+			right: 1px;
+			width: 81px;
+		}
+	}
+
+	.flor_amarilla {
+		position: absolute;
+		top: -60px;
+		right: 4px;
+		@include media-breakpoint-down(lg) {
+			top: -25px;
+			right: -14px;
+			width: 73px;
+		}
+		@include media-breakpoint-down(md) {
+			top: 450px;
+			left: 4px;
+			width: 56px;
+		}
+		@include media-breakpoint-down(sm) {
+			top: 410px;
+			left: 4px;
+			width: 56px;
+		}
+		@include media-breakpoint-down(xs) {
+			top: 413px;
+			left: 4px;
+			width: 56px;
+		}
+	}
+
+	.libro {
+		position: absolute;
+		top: -66px;
+		right: 43px;
+		@include media-breakpoint-down(lg) {
+			top: -39px;
+			right: -2px;
+			width: 130px;
+		}
+		@include media-breakpoint-down(md) {
+			top: -5px;
+			right: 10px;
+			width: 90px;
+		}
+	}
+
+	.nube {
+		position: absolute;
+		top: -51px;
+		right: 60px;
+		@include media-breakpoint-down(xl) {
+			top: -5px;
+			right: 15px;
+			width: 90px;
+		}
+		@include media-breakpoint-down(md) {
+			top: -5px;
+			right: 10px;
+			width: 90px;
+		}
+	}
+
+	.sol {
+		position: absolute;
+		top: -62px;
+		right: 42px;
+		@include media-breakpoint-down(lg) {
+			top: -96px;
+			right: 13px;
+			width: 85px;
+		}
+		@include media-breakpoint-down(md) {
+			top: -15px;
+			right: 21px;
+			width: 64px;
+		}
+	}
+}
+
+.btn-kids {
+	display: inline-block;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: 0.625rem 1.25rem;
+	font-size: 1rem;
+	border-radius: 50px;
+	text-transform: uppercase;
+	letter-spacing: 0.09em;
+	min-height: 52px;
+
+	@include media-breakpoint-down(md) {
+		width: 210px;
+	}
+
+	// img {
+	// 	width: 28.8px;
+	// }
+}
+
+.color-orange {
+	@include links($color-orange);
+}
+
+.color-red {
+	@include links($color-red);
+}
+
+.color-blue {
+	@include links($color-blue);
+}
+
+.color-purple {
+	@include links($color-purple);
+}
+
+.color-bluegreen {
+	@include links($color-bluegreen);
+}
+
+.color-green {
+	@include links($color-green);
+}
+
+.btn-custom {
+	@include button-variant($color-orange, $color-primary, red);
+}
+
+.btn-orange {
+	@include btn-kidsvariant($color-white, $color-orange, $color-white);
+	@include font-size(15);
+}
+
+.btn-red {
+	@include btn-kidsvariant($color-white, $color-red, $color-white);
+	@include font-size(15);
+}
+
+.btn-blue {
+	@include btn-kidsvariant($color-white, $color-blue, $color-white);
+	@include font-size(15);
+}
+
+.btn-purple {
+	@include btn-kidsvariant($color-white, $color-purple, $color-white);
+	@include font-size(15);
+}
+
+.btn-bluegreen {
+	@include btn-kidsvariant($color-white, $color-bluegreen, $color-white);
+	@include font-size(15);
+}
+
+.btn-green {
+	@include btn-kidsvariant($color-white, $color-green, $color-white);
+	@include font-size(15);
+}
+
+.btn-blue-active {
+	@include btn-kidsvariant($color-white, $color-blue-active, $color-white);
+	@include font-size(15);
+}
+
+.order-xs-1 {
+	order: 1 !important;
+}
+
+.order-xs-2 {
+	order: 2 !important;
+}
+
+.custom-container-fluid {
+	max-width: 90rem;
+	max-width: 103.125rem;
+	margin: auto;
+}
+
+.footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	background-image: url(../images/footer_bg2.svg);
+	// background-image: url(../images/mancha_color.png);
+	background-size: cover;
+	background-position: 50% top;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 320px;
+	overflow: hidden;
+
+	@include media-breakpoint-down(xl) {
+		background-position: 50% 0px;
+	}
+
+	@include media-breakpoint-down(md) {
+		background-position: 50% 0px;
+		height: 473px;
+	}
+
+	@include media-breakpoint-down(sm) {
+		background-position: 50% 0px;
+		height: 480px;
+	}
+
+	@include media-breakpoint-down(xs) {
+		background-position: 80% 0px;
+		height: 425px;
+	}
+
+	ul {
+		list-style: none;
+		display: flex;
+		padding: 0px;
+		margin-bottom: 0px;
+		@include media-breakpoint-down(md) {
+			display: block;
+		}
+	}
+
+	li {
+		display: inline-flex;
+		align-items: stretch;
+		@include media-breakpoint-down(md) {
+			display: block;
+			margin-bottom: 50px;
+		}
+	}
+
+	li:last-child {
+		margin-left: auto !important;
+		@include media-breakpoint-down(md) {
+			margin-bottom: 0px;
+		}
+	}
+
+	.logos {
+		position: absolute;
+		bottom: 95px;
+		left: 50%;
+		transform: translateX(-50%);
+		padding: 0px 7.5rem;
+		@include media-breakpoint-down(md) {
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			padding: 0px 0.5rem;
+		}
+		@include media-breakpoint-down(xs) {
+			bottom: 60px;
+		}
+	}
+
+	.logo-club {
+		margin-right: 135px;
+		@include media-breakpoint-down(lg) {
+			margin-right: 50px;
+			width: 240px;
+		}
+		@include media-breakpoint-down(md) {
+			margin-right: 0px;
+			width: 180px;
+		}
+	}
+
+	.logo-fundacio {
+		@include media-breakpoint-down(lg) {
+			width: 192px;
+		}
+		@include media-breakpoint-down(md) {
+			width: 132px;
+		}
+	}
+
+	.logo-ordesa {
+		@include media-breakpoint-down(lg) {
+			width: 202px;
+		}
+		@include media-breakpoint-down(md) {
+			width: 148px;
+		}
+	}
+
+	.push {
+		margin-left: auto;
+	}
+}
+
+// .david,
+// .ferri {
+// 	.block-text p {
+// 		width: 90%;
+// 	}
+// }
+
+// .feli,
+// .jechus,
+// .sol,
+// .flora {
+// 	.block-text p {
+// 		width: 95%;
+// 	}
+// }
+
+/* ********************************************************************* CONTES */
+/* ********************************************************************* CONTES */
+/* ********************************************************************* CONTES */
+
+.header {
+	$self: &;
+
+	position: relative;
+	background-color: #003676;
+	width: 100%;
+	height: 160px;
+	// display: flex;
+	// align-items: center;
+	// justify-content: center;
+	// text-align: center;
+	@include media-breakpoint-down(sm) {
+		height: 115px;
+	}
+
+	z-index: 99;
+
+	.logo {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		img {
+			width: 212px;
+		}
+		@include media-breakpoint-down(sm) {
+			width: 128px;
+			left: 35px;
+			transform: translate(0%, -50%);
+		}
+	}
+
+	.social {
+		position: absolute;
+		top: 15px;
+		right: 30px;
+		@include media-breakpoint-down(md) {
+			right: 20px;
+			top: 50px;
+			transform: translate(0%, -50%);
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		ul {
+			list-style: none;
+			padding-left: 0px;
+		}
+
+		li {
+			display: inline;
+			margin-left: 0.625rem;
+		}
+	}
+}
+
+/* ********************************************************************* LEO */
+.cuento_leo {
+	$self: &;
+
+	.cuento_intro {
+		padding-top: 80px;
+		padding-bottom: 20px;
+		background-color: $color-orange-light;
+		background-image: url(../images/bg_leo.png);
+		background-size: initial;
+		background-position: center 50px;
+		background-repeat: no-repeat;
+		@include media-breakpoint-down(lg) {
+			background-size: contain;
+		}
+		@include media-breakpoint-down(sm) {
+			background-image: url(../images/bg_leo_mobile.svg);
+			background-size: initial;
+			background-position: center 13px;
+			padding-bottom: 40px;
+		}
+	}
+
+	h1 {
+		@include font-size(58);
+		@include line-height(61);
+		font-family: 'eldwinscript_bold';
+		margin-bottom: 20px;
+		color: $color-orange;
+		text-align: center;
+		@include media-breakpoint-down(sm) {
+			@include font-size(43);
+			@include line-height(49);
+			margin-bottom: 12px;
+		}
+
+		span {
+			@include media-breakpoint-down(sm) {
+				display: block;
+			}
+		}
+	}
+
+	p {
+		@include font-size(30);
+		@include line-height(40);
+		color: $color-grey;
+		margin: 0 auto 55px;
+		font-weight: 600;
+		text-align: center;
+		max-width: 740px;
+		@include media-breakpoint-down(sm) {
+			@include font-size(18);
+			@include line-height(23);
+			margin-bottom: 45px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+
+	.capitalize {
+		font-family: 'olde_englishregular';
+		margin-right: 8px;
+		@include font-size(70);
+		@include media-breakpoint-down(sm) {
+			margin-right: 15px;
+		}
+	}
+
+	.block-image {
+		width: 478px;
+		height: auto;
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+		}
+	}
+
+	.audioplayer {
+		max-width: 580px;
+		margin: 100px 30px 60px;
+		display: block;
+
+		@include media-breakpoint-down(sm) {
+			margin: 50px 74px 30px;
+			display: block;
+			padding: 0px 20px;
+		}
+		audio {
+			width: 580px;
+			@include media-breakpoint-down(sm) {
+				width: 100%;
+			}
+		}
+	}
+
+	.btn-kids {
+		width: auto;
+	}
+
+	.custom-container-fluid {
+		max-width: 103.125rem;
+		margin: auto;
+	}
+
+	.explicaselo {
+		padding: 100px 0px 70px;
+		background-color: #fdfcf6;
+		@include media-breakpoint-down(xl) {
+			padding: 70px 5rem 60px;
+		}
+		@include media-breakpoint-down(xs) {
+			padding: 35px 10px 60px;
+		}
+
+		h2 {
+			@include font-size(58);
+			@include line-height(61);
+			font-family: 'eldwinscript_bold';
+			margin-bottom: 70px;
+			color: $color-orange;
+			text-align: center;
+			background-image: url(../images/gotica_top_desk.svg);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+			@include media-breakpoint-down(xl) {
+				background-image: url(../images/gotica_top_desk2.svg);
+				background-image: none;
+				margin-bottom: 0px;
+			}
+
+			@include media-breakpoint-down(sm) {
+				@include font-size(35);
+				@include line-height(61);
+				background-image: none;
+				margin-bottom: 0px;
+			}
+		}
+
+		p {
+			@include font-size(24);
+			@include line-height(47);
+			color: $color-black-dark;
+			font-weight: 400;
+			max-width: 950px;
+			text-align: left;
+			margin: auto;
+			transition: height 0.6s ease;
+			@include media-breakpoint-down(sm) {
+				@include font-size(18);
+				@include line-height(34);
+				padding-left: 0px;
+				padding-right: 0px;
+			}
+		}
+
+		span.br {
+			display: block;
+		}
+
+		.btn_seguirleyendo {
+			margin: auto 0px;
+			text-align: center;
+		}
+
+		.gotica-image-bottom {
+			margin-top: 50px;
+			margin-bottom: 30px;
+			@include media-breakpoint-down(sm) {
+				margin-top: 30px;
+				margin-bottom: 20px;
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.gotica-image-top {
+			@include media-breakpoint-down(xxl) {
+				margin-top: 30px;
+				margin-bottom: 40px;
+				display: none;
+			}
+			@include media-breakpoint-down(xl) {
+				display: block;
+			}
+			@include media-breakpoint-down(sm) {
+				margin-top: 10px;
+				margin-bottom: 40px;
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.gotica-btn {
+			background-color: #205491;
+		}
+	}
+}
+
+/* ********************************************************************* DAVID */
+.cuento_david {
+	$self: &;
+
+	.cuento_intro {
+		padding-top: 80px;
+		padding-bottom: 20px;
+		background-color: $color-red-light;
+		background-image: url(../images/bg_leo.png);
+		background-size: initial;
+		background-position: center 50px;
+		background-repeat: no-repeat;
+		@include media-breakpoint-down(lg) {
+			background-size: contain;
+		}
+		@include media-breakpoint-down(sm) {
+			background-image: url(../images/bg_leo_mobile.svg);
+			background-size: initial;
+			background-position: center 13px;
+			padding-bottom: 40px;
+		}
+	}
+
+	h1 {
+		@include font-size(58);
+		@include line-height(61);
+		font-family: 'eldwinscript_bold';
+		margin-bottom: 20px;
+		color: $color-red;
+		text-align: center;
+		@include media-breakpoint-down(sm) {
+			@include font-size(43);
+			@include line-height(49);
+			margin-bottom: 12px;
+		}
+
+		span {
+			@include media-breakpoint-down(sm) {
+				display: block;
+			}
+		}
+	}
+
+	p {
+		@include font-size(30);
+		@include line-height(40);
+		color: $color-grey;
+		margin: 0 auto 55px;
+		font-weight: 600;
+		text-align: center;
+		max-width: 740px;
+		@include media-breakpoint-down(sm) {
+			@include font-size(18);
+			@include line-height(23);
+			margin-bottom: 45px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+
+	.capitalize {
+		font-family: 'olde_englishregular';
+		margin-right: 8px;
+		@include font-size(70);
+		@include media-breakpoint-down(sm) {
+			margin-right: 15px;
+		}
+	}
+
+	.block-image {
+		width: 478px;
+		height: auto;
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+		}
+	}
+
+	.audioplayer {
+		max-width: 580px;
+		margin: 100px 30px 60px;
+		display: block;
+
+		@include media-breakpoint-down(sm) {
+			margin: 50px 74px 30px;
+			display: block;
+			padding: 0px 20px;
+		}
+		audio {
+			width: 580px;
+			@include media-breakpoint-down(sm) {
+				width: 100%;
+			}
+		}
+	}
+
+	.btn-kids {
+		width: auto;
+	}
+
+	.custom-container-fluid {
+		max-width: 103.125rem;
+		margin: auto;
+	}
+
+	.explicaselo {
+		padding: 100px 0px 70px;
+		background-color: #fdfcf6;
+		@include media-breakpoint-down(xl) {
+			padding: 70px 5rem 60px;
+		}
+		@include media-breakpoint-down(xs) {
+			padding: 35px 10px 60px;
+		}
+
+		h2 {
+			@include font-size(58);
+			@include line-height(61);
+			font-family: 'eldwinscript_bold';
+			margin-bottom: 70px;
+			color: $color-red;
+			text-align: center;
+			background-image: url(../images/gotica_top_desk.svg);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+			@include media-breakpoint-down(xl) {
+				background-image: url(../images/gotica_top_desk2.svg);
+				background-image: none;
+				margin-bottom: 0px;
+			}
+
+			@include media-breakpoint-down(sm) {
+				@include font-size(35);
+				@include line-height(61);
+				background-image: none;
+				margin-bottom: 0px;
+			}
+		}
+
+		p {
+			@include font-size(24);
+			@include line-height(47);
+			color: $color-black-dark;
+			font-weight: 400;
+			max-width: 950px;
+			text-align: left;
+			margin: auto;
+			transition: height 0.6s ease;
+			@include media-breakpoint-down(sm) {
+				@include font-size(18);
+				@include line-height(34);
+				padding-left: 0px;
+				padding-right: 0px;
+			}
+		}
+
+		span.br {
+			display: block;
+		}
+
+		.btn_seguirleyendo {
+			margin: auto 0px;
+			text-align: center;
+		}
+
+		.gotica-image-bottom {
+			margin-top: 50px;
+			margin-bottom: 30px;
+			@include media-breakpoint-down(sm) {
+				margin-top: 30px;
+				margin-bottom: 20px;
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.gotica-image-top {
+			@include media-breakpoint-down(xxl) {
+				margin-top: 30px;
+				margin-bottom: 40px;
+				display: none;
+			}
+			@include media-breakpoint-down(xl) {
+				display: block;
+			}
+			@include media-breakpoint-down(sm) {
+				margin-top: 10px;
+				margin-bottom: 40px;
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.gotica-btn {
+			background-color: #205491;
+		}
+	}
+}
