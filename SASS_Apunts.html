@@ -1,0 +1,98 @@
+.faculty-card-page {
+$self: &;
+
+
+&__image {
+img {
+width: 100%;
+}
+}
+}
+
+
+AIXÒ ÉS IGUAL A:
+.faculty-card-page__image img {
+max-width: 100%;
+}
+
+
+
+
+
+
+
+
+.faculty-card-page {
+
+
+&__content {
+flex: 1;
+#{$self}__title {
+color: red;
+}
+}
+}
+
+
+AIXÒ ÉS IGUAL A:
+.faculty-card-page__content {
+flex: 1;
+}
+
+
+.faculty-card-page__content .faculty-card-page__title {
+color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="teacher teacher--small">
+  <div class="teacher__content">
+    <div class="xxxx">
+    </div>
+  </div>
+
+
+
+
+  .teacher--small {
+  width: 50%;
+  }
+
+
+  .teacher--small .teacher__content {
+  padding: 24px 0;
+  }
+
+
+  .teacher__content {
+  flex: 1;
+  }
+
+
+
+
+  .teacher {
+  $self: &;
+  &__content {
+  flex: 1;
+  }
+
+
+  &--small {
+  width: 50%;
+
+
+  #{$self}__content {
+  padding: $spacing * 3 0;
+  }
+  }
